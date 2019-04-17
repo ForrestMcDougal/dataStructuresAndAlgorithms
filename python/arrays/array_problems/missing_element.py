@@ -5,9 +5,12 @@ a random element. Given these two arrays, find which element is
 missing in the second array.
 
 Solution:
-First, sort the first array. Then check whether an element in
+
+1) First, sort the first array. Then check whether an element in
 the first array appears in the second via binary search. Duplicate
 elements can be problematic. The complexity is O(NlogN).
+
+2) Use a default dictionary to compare the two arrays
 """
 
 import unittest
@@ -60,6 +63,26 @@ def finder(arr1: list, arr2: list) -> int:
             d[num] -= 1
 
 
+def finderXOR(arr1: list, arr2: list) -> int:
+    """
+    Finds missing via XOR
+
+    Arguments:
+        arr1 {list} -- array with missing element
+        arr2 {list} -- array without missing element
+
+    Returns:
+        int -- missing element
+    """
+
+    result = 0
+
+    for num in arr1 + arr2:
+        result ^= num
+
+    return result
+
+
 class TestFinder(unittest.TestCase):
     def test_finder_sort(self):
         self.assertEqual(finder_sort([5, 5, 7, 7], [5, 7, 7]), 5)
@@ -72,6 +95,13 @@ class TestFinder(unittest.TestCase):
         self.assertEqual(finder([5, 5, 7, 7], [5, 7, 7]), 5)
         self.assertEqual(finder([1, 2, 3, 4, 5, 6, 7], [3, 7, 2, 1, 4, 6]), 5)
         self.assertEqual(finder([9, 8, 7, 6, 5, 4, 3, 2, 1], [
+                         9, 8, 7, 5, 4, 3, 2, 1]), 6)
+
+    def test_finderXOR(self):
+        self.assertEqual(finderXOR([5, 5, 7, 7], [5, 7, 7]), 5)
+        self.assertEqual(
+            finderXOR([1, 2, 3, 4, 5, 6, 7], [3, 7, 2, 1, 4, 6]), 5)
+        self.assertEqual(finderXOR([9, 8, 7, 6, 5, 4, 3, 2, 1], [
                          9, 8, 7, 5, 4, 3, 2, 1]), 6)
 
 
