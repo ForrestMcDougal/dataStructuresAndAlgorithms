@@ -8,16 +8,16 @@ same letters.
 import unittest
 
 
-def anagram_sort(s1, s2):
+def anagram_sort(s1: str, s2: str) -> bool:
     """
     Finds anagrams by comparing sorted strings
 
     Arguments:
-        s1 {string} -- first string
-        s2 {string} -- second string
+        s1 {str} -- first string
+        s2 {str} -- second string
 
     Returns:
-        boolean -- whether the two strings are anagrams
+        bool -- whether the two strings are anagrams
     """
 
     s1 = s1.replace(' ', '').lower()
@@ -26,16 +26,16 @@ def anagram_sort(s1, s2):
     return sorted(s1) == sorted(s2)
 
 
-def anagram(s1, s2):
+def anagram(s1: str, s2: str) -> bool:
     """
-    Finds anagrams by comparing sorted strings
+    Finds anagrams by using a dictionary
 
     Arguments:
-        s1 {string} -- first string
-        s2 {string} -- second string
+        s1 {str} -- first string
+        s2 {str} -- second string
 
     Returns:
-        boolean -- whether the two strings are anagrams
+        bool -- whether the two strings are anagrams
     """
 
     s1 = s1.replace(' ', '').lower()
