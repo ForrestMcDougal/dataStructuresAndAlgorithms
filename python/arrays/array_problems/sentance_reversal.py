@@ -45,7 +45,8 @@ def rev_word_slice(s: str) -> str:
 def rev_word(s: str) -> str:
     """
     Reverses the words in a given string after removing whitespace.
-    Uses python's reversed function after implementing the split method.
+    First implement the split method and then join the words together
+    using slicing methods.
 
     Arguments:
         s {str} -- String to reverse order of words
@@ -68,7 +69,7 @@ def rev_word(s: str) -> str:
 
         i += 1
 
-    return ' '.join(reversed(words))
+    return ' '.join(words[::-1])
 
 
 class TestRevWord(unittest.TestCase):
