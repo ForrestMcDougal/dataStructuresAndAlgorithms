@@ -40,20 +40,3 @@ class DynamicArray(object):
 
     def make_array(self, cap):
         return (cap * ctypes.py_object)()
-
-
-if __name__ == "__main__":
-    arr = DynamicArray()
-    arr.append(1)
-    print(len(arr))
-    arr.append(2)
-    print(len(arr))
-    print(arr[1])
-    try:
-        print(arr[4])
-    except IndexError as x:
-        print(x)
-    print(arr.capacity)
-    for i in range(100):
-        arr.append(i)
-    print(arr.capacity)
