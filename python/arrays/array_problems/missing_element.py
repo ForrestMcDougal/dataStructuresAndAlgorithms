@@ -11,6 +11,8 @@ the first array appears in the second via binary search. Duplicate
 elements can be problematic. The complexity is O(NlogN).
 
 2) Use a default dictionary to compare the two arrays
+
+3) Use exclusive or (XOR)
 """
 
 import unittest
