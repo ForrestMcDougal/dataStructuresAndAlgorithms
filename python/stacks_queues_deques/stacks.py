@@ -27,7 +27,7 @@ class Stack(object):
     parameters and returns an integer
     """
 
-    def __init__(self) -> list:
+    def __init__(self):
         self.items = []
 
     def isEmpty(self) -> bool:
