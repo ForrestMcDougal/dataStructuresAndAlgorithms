@@ -34,7 +34,7 @@ constant time operations to access any element in the array
 class Node(object):
     def __init__(self, value):
         self.value = value
-        self.nextnode = None
+        self.next_node = None
 
 # create nodes
 # a = Node(1)
@@ -42,8 +42,8 @@ class Node(object):
 # c = Node(3)
 
 # link the nodes
-# a.nextnode = b
-# b.nextnode = c
+# a.next_node = b
+# b.next_node = c
 
 # get value of next node
-# a.nextnode.value
+# a.next_node.value
