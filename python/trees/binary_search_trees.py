@@ -54,7 +54,7 @@ class BinarySearchTree(object):
 
     def put(self, key, val):
         if self.root:
-            self._put(key, val, self.root):
+            self._put(key, val, self.root)
         else:
             self.root = TreeNode(key, val)
         self.size = self.size + 1
